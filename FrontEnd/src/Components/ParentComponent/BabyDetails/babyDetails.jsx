@@ -86,7 +86,7 @@ export default function BabyDetails() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await instance.get('/midwife/child');
+                const res = await instance.get('/parent/child');
                 setApiData(res.data);
             }
             catch (err) {

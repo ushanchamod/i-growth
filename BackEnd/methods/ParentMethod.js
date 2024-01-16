@@ -165,7 +165,7 @@ export const UpdateParentProfile = async (req, res, next) => {
 }
 
 export const GetChildByGuardianNIC = async (req, res, next) => {
-    const {guardian_nic} = req.session.parent.parent_id
+    const {guardian_nic} = req.session.parent.guardian_nic
     
     try {
         const [rows] = await pool.query('SELECT * FROM child WHERE gardian_nic = ?', [guardian_nic]);
