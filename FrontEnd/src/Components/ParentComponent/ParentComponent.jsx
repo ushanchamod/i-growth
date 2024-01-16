@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import instance from '../../utility/AxiosInstance'
 import './ParentComponent.scss'
@@ -12,7 +12,7 @@ export default function ParentComponent() {
   const navigation = useNavigate()
 
   const [authenticated, setAuthenticated] = useState(false)
-  const [active, setActive] = useState('measure')
+  const [active, setActive] = useState('child-details')
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -42,9 +42,9 @@ export default function ParentComponent() {
       </div>
       {/* <Parent /> */}
       {
-                active === 'child-details' ? <BabyDetail />:              
-                active === 'profile' ? <Profile/>:
-                 active === 'news-feed' ? <NewsFeed/> : null
+        active === 'child-details' ? <BabyDetail /> :
+          active === 'profile' ? <Profile /> :
+            active === 'news-feed' ? <NewsFeed /> : null
       }
     </div>
   )

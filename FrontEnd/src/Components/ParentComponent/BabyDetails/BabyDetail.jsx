@@ -166,7 +166,7 @@ export default function BabyDetail() {
                                                                     <div className='detail'><h4>Gender :</h4>{data.child_gender}</div>
                                                                     <div className='detail'><h4>Gudiunt Name :</h4>{data.guardian_name}</div>
                                                                     <div className='detail'><h4>Address :</h4>{data.address}</div>
-                                                                    <div className='detail'><h4>Gudiunt Mobile :</h4>{data.phone}</div>
+                                                                    {/* <div className='detail'><h4>Gudiunt Mobile :</h4>{data.phone}</div> */}
                                                                     <div className='detail'><h4>Bron Weight :</h4>{data.child_born_weight}</div>
                                                                     {/* <div className='detail'><h4>BMI :</h4>---</div>
                                                         <div className='detail'><h4>Stage :</h4>----</div> */}
@@ -231,14 +231,14 @@ const DevelopmentActivityTable = (props) => {
         getData()
     }, [child_id, selected_month, trigger])
 
-    const MakeDone = async(id) => {
-        try{
+    const MakeDone = async (id) => {
+        try {
             const res = await instance.post(`parent/dev-activity/${child_id}/${id}`);
             console.log(res.data);
             setTrigger(prv => !prv)
             alert("Successfully made as done")
         }
-        catch(err){
+        catch (err) {
             console.log(err);
         }
     }
