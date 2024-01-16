@@ -5,7 +5,8 @@ import './ParentComponent.scss'
 import Cover from '../cover/cover'
 import NewsFeed from './NewsFeed/News'
 import Profile from './Profile/profile'
-import BabyDetails from './BabyDetails/babyDetails'
+import BabyDetail from './BabyDetails/BabyDetail'
+
 
 export default function ParentComponent() {
   const navigation = useNavigate()
@@ -41,7 +42,7 @@ export default function ParentComponent() {
       </div>
       {/* <Parent /> */}
       {
-                active === 'child-details' ? <BabyDetails />:              
+                active === 'child-details' ? <BabyDetail />:              
                 active === 'profile' ? <Profile/>:
                  active === 'news-feed' ? <NewsFeed/> : null
       }
