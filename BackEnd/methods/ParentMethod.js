@@ -168,7 +168,7 @@ export const GetChildByGuardianNIC = async (req, res, next) => {
     const {guardian_nic} = req.session.parent.guardian_nic
     
     try {
-        const [rows] = await pool.query('SELECT * FROM child WHERE gardian_nic = ?', [guardian_nic]);
+        const [rows] = await pool.query('SELECT child.*, parent.guardian_name, parent.address FROM child inner join parent on child.gardian_nic = parent.guardian_nic WHERE guardian_nic = ?', [guardian_nic]);
         return res.status(200).json(rows)
     }
     catch (err) {

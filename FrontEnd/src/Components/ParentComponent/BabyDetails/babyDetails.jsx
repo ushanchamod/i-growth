@@ -87,6 +87,7 @@ export default function BabyDetails() {
         const getData = async () => {
             try {
                 const res = await instance.get('/parent/child');
+                console.log(res.data);
                 setApiData(res.data);
             }
             catch (err) {
