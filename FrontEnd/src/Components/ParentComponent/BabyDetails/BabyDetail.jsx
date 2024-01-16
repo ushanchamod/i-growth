@@ -256,7 +256,7 @@ const DevelopmentActivityTable = (props) => {
                             <td className='number'>{index + 1}</td>
                             <td>{data.activity_name}</td>
                             {
-                                data.done ? <td><label>Done</label></td> : <td><button onClick={() => MakeDone(data.activity_id)}>Make as Done</button></td>
+                                data.done ? <td><button className='done'>Done</button></td> : <td><button className='makeAsDone' onClick={() => MakeDone(data.activity_id)}>Make as Done</button></td>
                             }
                         </tr>
                     )
